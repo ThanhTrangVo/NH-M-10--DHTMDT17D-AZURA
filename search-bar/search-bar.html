@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="search-bar.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/nav-logo.png">
+
+    <script src="login.js"></script>
+    <script src="../login/boxicons.js"></script>
+
+   <!--ICON FONT AWESOME-->
+   <script src="https://kit.fontawesome.com/c3f67644b1.js" crossorigin="anonymous"></script>
+    <title>Azura | Login</title>
+</head>
+<body>
+
+<!--Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark cyan fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">
+        <img src="images/nav-logo.png" alt="nav-logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-4" aria-controls="navbarSupportedContent-4" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent-4">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="../index.html">TRANG CHỦ<span class="sr-only"></span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../podcast/podcast.html.html">PODCAST</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../blog.html">BÀI VIẾT</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../quotes.html">TRÍCH DẪN</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../about.html">VỀ CHÚNG TÔI</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../contact.html">LIÊN HỆ</a>
+                </li>
+                <li  class="nav-item">
+                    <a class="nav-link" href="#"><i class='bx bx-search' ></i></a>
+                </li>
+                <li  class="nav-item">
+                    <a class="nav-link" href="../login/login.html"><i class='bx bxs-user-circle'></i></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!--/.Navbar -->
+
+
+
+
+
+
+
+
+    <!--search bar-->
+
+    <section class="search-bar">
+        <div class="wrap">
+         <div class="search" id="searchBar">
+            <input type="text" class="searchTerm" placeholder="Bạn đang tìm kiếm điều gì?">
+            <button type="submit" class="searchButton">
+                <i class='bx bx-search'></i>
+           </button>
+         </div>
+      </div>
+      <h1 class="article-list">Danh sách bài viết:</h1>
+      <div id="root">
+      </div>
+    <section>
+
+    <!--search bar-->
+
+<!--======================
+    SEARCH ENGINE FUNCTION
+===========================-->
+
+<!--SEARCH ENGINE JS-->
+<script>
+    const product = [
+        {
+            id: 0,
+            image: '../images/yoann-boyer.jpg',
+            title: 'Yoko Onsen Quang Hanh Mang Đến Cho Du Khách Một Trải Nghiệm Du Lịch Chữa Lành Toàn Diện',
+            price: 545,
+            link: '../single.html',
+        },
+        {
+            id: 1,
+            image: '../images/ninhvanbay.jpg',
+            title: 'Khu nghỉ dưỡng có địa thế phong thủy, lưng dựa vào dãy núi Hòn Hèo thoai thoải, mặt hướng vịnh biển hiền hòa, được bao quanh bởi khu rừng xanh ngắt...',
+            price: 345,
+            link: '../single2.html',
+        },
+        {
+            id: 2,
+            image: '../images/six-senses-con-dao.jpg',
+            title: 'Six Senses Côn Đảo là một thiên đường nghỉ dưỡng nằm giữa biển xanh và khu rừng nhiệt đới tươi tốt...',
+            price: 125,
+            link: '../single3.html',
+        },
+        {
+            id: 3,
+            image: '../images/alba.jpg',
+            title: 'Cách thành phố Huế 30km về phía Tây Bắc, mang đến hành trình chăm sóc sức khỏe Tâm – Thân độc đáo...',
+            price: 85,
+            link: '../single4.html',
+        }
+    ];
+
+    const categories = [...new Set(product.map((item) => { return item }))]
+
+    document.getElementById('searchBar').addEventListener('keyup', (e) => {
+        const searchData = e.target.value.toLowerCase();
+        const filteredData = categories.filter((item) => {
+            return (
+                item.title.toLowerCase().includes(searchData)
+            )
+        })
+        displayItem(filteredData)
+    });
+
+    const displayItem = (items) => {
+        document.getElementById('root').innerHTML = items.map((item) => {
+            var { image, title, price, link } = item;
+            return (
+                `<div class='box'>
+                    <div class='img-box'>
+                        <img class='images' src=${image}></img>
+                    </div> 
+                    <div class='bottom'>
+                        <p>${title}</p>
+                        <h2><i class="fa-solid fa-eye"></i>: ${price}</h2>
+                    <a href="${link}"><button>Xem thêm</button></a>
+                    </div>
+                </div>`
+            )
+        }).join('')
+    };
+    displayItem(categories);
+
+</script>
+<!--SEARCH ENGINE JS-->
+<!--======================
+    SEARCH ENGINE FUNCTION
+===========================-->
+<script src="../login/boxicons.js"></script>
+
+</body>
+</html>

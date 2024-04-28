@@ -1,0 +1,319 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+body{
+    font-family: 'Montserrat', sans-serif;
+    background: url("../login/images/background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+/*====================
+    Nav-bar styles
+====================*/
+
+nav {
+    background: rgb(159, 210, 221);
+}
+
+.navbar-brand {
+    padding-right: 0px;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: rgb(255, 255, 255) ;
+    text-transform: uppercase;
+    font-size: 17px;
+    font-weight: 600;
+    letter-spacing: .5px;
+}
+
+
+
+.navbar-expand-lg .navbar-nav .nav-link {
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.nav-link {
+    display: block;
+    padding: .1rem 1rem;
+}
+
+/*====================
+    Banner-carousel
+====================*/
+
+.carousel {
+    width: 100%;
+    height: auto;
+    position: relative;
+}
+
+.carousel .gradient {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    background: -moz-linear-gradient(left, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%);
+    background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%);
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4d000000', endColorstr='#4d000000', GradientType=1);
+}
+
+.carousel-indicators li span {
+    text-indent: 0;
+    position: absolute;
+    width: 100%;
+    height: auto;
+    padding: 15px 20px;
+    line-height: 20px;
+    bottom: 0;
+    border: none;
+    color: white;
+    font-weight: 200;
+    font-size: 14px;
+    letter-spacing: 1.5px;
+    background-color: transparent;
+    font-family: 'Playfair Display', serif;
+}
+
+.carousel .carousel-inner img {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+
+.carousel-thumbnails .carousel-indicators li {
+    margin-right: 0;
+    margin-left: 0;
+    position: relative;
+    cursor: pointer;
+}
+
+.carousel-thumbnails .carousel-indicators .active {
+    height: 15px;
+    width: 27px;
+    z-index: 9;
+    outline: 1px solid #000000;
+}
+
+.carousel-caption {
+    top: 40%;
+    bottom: auto;
+    font-family: 'Playfair Display', serif;
+}
+
+.carousel-caption h1 {
+    font-size: 50px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.carousel-caption .lead {
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-weight: 400;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.carousel-caption .btn-primary,
+.carousel-caption .btn-primary:not(:disabled):not(.disabled):active {
+    color: #000;
+    border-radius: 0;
+    border: none;
+    font-size: 16px;
+    width: 200px;
+    font-weight: 600;
+    padding: 12px 30px;
+    background-color: rgb(159, 210, 221);
+    border-color: #72abc8;
+    text-transform: uppercase;
+    font-family: 'Playfair Display', serif;
+}
+
+.carousel-caption .btn-primary span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+.carousel-caption .btn-primary span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: -13px;
+    right: -20px;
+    transition: 0.5s;
+    font-size: 28px;
+}
+
+.carousel-caption .btn-primary:hover span {
+    padding-right: 25px;
+}
+
+.carousel-caption .btn-primary:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+.bx{
+    font-size: 30px;
+}
+.bx-search{
+    text-align: right;
+}
+/*header*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*search bar*/
+
+.search {
+    width: 100%;
+    position: absolute;
+    display: flex;
+  }
+  
+  .searchTerm {
+    width: 100%;
+    border: 3px solid #00B4CC;
+    border-right: none;
+    padding: 5px;
+    height: 36px;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    color: #9DBFAF;
+  }
+  
+  .searchTerm:focus{
+    color: #00B4CC;
+  }
+  
+  .searchButton {
+    width: 40px;
+    height: 36px;
+    border: 1px solid #00B4CC;
+    background: #00B4CC;
+    text-align: center;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 20px;
+    transition: 0.5s;
+  }
+  
+  /*Resize the wrap to see the search bar change!*/
+  .wrap{
+    width: 30%;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .search-bar{
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    height: 90vh;
+    background: url("../login/images/background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    margin: 0 auto;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  }
+
+
+  /*search bar*/
+
+
+
+  /*SEARCH ENGINE*/
+
+
+  #root{
+    position: absolute;
+    top: 250px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+}
+.box{
+    margin: 1px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 5px;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 20px;
+    scale: 0.8;
+    box-shadow: 1px 1px 5px 10px rgba(0, 0, 0, 0.09);
+
+}
+.img-box{
+    width: 100%;
+    height: 176px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.images{
+    max-height: 90%;
+    max-width: 90%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 20px;
+
+}
+.bottom{
+    margin-top: 2px;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 150px;
+}
+h2{
+    font-size: 20px;
+    color: orangered;
+}
+button{
+    width: 100%;
+    position: relative;
+    border: none;
+    border-radius: 5px;
+    background-color: #333;
+    padding: 2px 25px;
+    cursor: pointer;
+    color: white;
+}
+button:hover{
+    background-color: #a0d4dc;
+}
+::-webkit-scrollbar{
+    display: none;
+}
+.article-list{
+    position: absolute;
+    top: 220px;
+    font-size: 16px;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 10px;
+    margin-left: 50px;
+    border-radius: 20px;
+}
